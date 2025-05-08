@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Serve static files from the React build
-app.use(express.static(path.join(__dirname, 'build')));
+//app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api',VideoRouter)
 
 app.use('/', apiRoutes);
@@ -23,9 +23,9 @@ app.use('/', apiRoutes);
 // app.use('/checkuser',activeUserRouter)
 // app.use('/watchlist',addWatchlist)
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+//app.get('*', (req, res) => {
+//    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+//});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
