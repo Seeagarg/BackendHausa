@@ -14,6 +14,11 @@ const port = process.env.PORT || 5631;
 app.use(bodyParser.json());
 app.use(cors());
 
+
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://daria-tube.vercel.app','https://yoga-portal-mocha.vercel.app']
+}));
+
 // Serve static files from the React build
 //app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api',VideoRouter)
