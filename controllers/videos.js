@@ -2,7 +2,7 @@ const {connection} = require('../config.js/db');
 
 module.exports = {
   getVideos: (req, res) => {
-    const queryy = 'SELECT * FROM tbl_videos ORDER BY id DESC';
+    const queryy = 'SELECT * FROM tbl_videos';
  
     if (!connection) {
       res.status(500).json({ error: 'Database connection is not established.' });
